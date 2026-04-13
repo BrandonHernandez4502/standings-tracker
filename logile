@@ -1,0 +1,33 @@
+2026-04-07 18:09:28.094 EDT [75581] LOG:  starting PostgreSQL 18.3 on x86_64-conda-linux-gnu, compiled by x86_64-conda-linux-gnu-cc (conda-forge gcc 14.3.0-18) 14.3.0, 64-bit
+2026-04-07 18:09:28.094 EDT [75581] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-04-07 18:09:28.097 EDT [75581] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2026-04-07 18:09:28.102 EDT [75587] LOG:  database system was shut down at 2026-04-07 18:08:34 EDT
+2026-04-07 18:09:28.105 EDT [75581] LOG:  database system is ready to accept connections
+2026-04-07 18:09:58.724 EDT [75694] FATAL:  database "brandon" does not exist
+2026-04-07 18:14:28.202 EDT [75585] LOG:  checkpoint starting: time
+2026-04-07 18:16:07.355 EDT [75585] LOG:  checkpoint complete: wrote 987 buffers (6.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=99.110 s, sync=0.028 s, total=99.153 s; sync files=312, longest=0.009 s, average=0.001 s; distance=4690 kB, estimate=4690 kB; lsn=0/1BFD0C0, redo lsn=0/1BFD030
+2026-04-07 18:16:58.658 EDT [76987] ERROR:  database "standings" already exists
+2026-04-07 18:16:58.658 EDT [76987] STATEMENT:  CREATE DATABASE standings;
+2026-04-07 18:18:22.762 EDT [76987] ERROR:  syntax error at or near "DATABASE" at character 8
+2026-04-07 18:18:22.762 EDT [76987] STATEMENT:  DELETE DATABASE standings;
+2026-04-07 18:20:14.898 EDT [76987] ERROR:  database "standings" is being accessed by other users
+2026-04-07 18:20:14.898 EDT [76987] DETAIL:  There is 1 other session using the database.
+2026-04-07 18:20:14.898 EDT [76987] STATEMENT:  DROP DATABASE standings;
+2026-04-07 18:20:55.697 EDT [76987] ERROR:  database "database_name" does not exist
+2026-04-07 18:20:55.697 EDT [76987] STATEMENT:  DROP DATABASE database_name WITH (FORCE);
+2026-04-07 18:21:06.047 EDT [75940] FATAL:  terminating connection due to administrator command
+2026-04-07 18:21:06.160 EDT [75585] LOG:  checkpoint starting: immediate force wait
+2026-04-07 18:21:06.173 EDT [75585] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.014 s; sync files=1, longest=0.002 s, average=0.002 s; distance=1 kB, estimate=4221 kB; lsn=0/1BFD570, redo lsn=0/1BFD518
+2026-04-07 18:26:06.233 EDT [75585] LOG:  checkpoint starting: time
+2026-04-07 18:27:42.790 EDT [75585] LOG:  checkpoint complete: wrote 961 buffers (5.9%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=96.494 s, sync=0.045 s, total=96.557 s; sync files=306, longest=0.009 s, average=0.001 s; distance=4411 kB, estimate=4411 kB; lsn=0/204C1B8, redo lsn=0/204C128
+2026-04-07 19:00:14.414 EDT [82470] ERROR:  syntax error at or near "5432" at character 27
+2026-04-07 19:00:14.414 EDT [82470] STATEMENT:  SELECT inet_server_addr()
+	5432
+	;
+2026-04-07 21:04:59.054 EDT [75585] LOG:  checkpoint starting: time
+2026-04-07 21:04:59.793 EDT [75585] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.705 s, sync=0.013 s, total=0.740 s; sync files=6, longest=0.010 s, average=0.003 s; distance=7 kB, estimate=3970 kB; lsn=0/204DED0, redo lsn=0/204DE78
+2026-04-07 21:09:59.893 EDT [75585] LOG:  checkpoint starting: time
+2026-04-07 21:10:00.036 EDT [75585] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.101 s, sync=0.004 s, total=0.143 s; sync files=1, longest=0.004 s, average=0.004 s; distance=2 kB, estimate=3573 kB; lsn=0/204E908, redo lsn=0/204E8B0
+2026-04-08 15:25:58.548 EDT [75585] LOG:  checkpoint starting: time
+2026-04-08 15:25:58.981 EDT [75585] LOG:  checkpoint complete: wrote 4 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.405 s, sync=0.012 s, total=0.433 s; sync files=5, longest=0.011 s, average=0.003 s; distance=10 kB, estimate=3217 kB; lsn=0/2051178, redo lsn=0/2051120
+2026-04-10 10:00:33.428 EDT [75581] LOG:  received smart shutdown request
