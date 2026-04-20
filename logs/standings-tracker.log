@@ -1,92 +1,24 @@
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - API response status: 200
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:70   P:32 W:21 D:7 L:4
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:64   P:31 W:19 D:7 L:5
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:55   P:31 W:15 D:10 L:6
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:55   P:32 W:16 D:7 L:9
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:52   P:32 W:15 D:7 L:10
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  6. Chelsea FC                     Pts:48   P:32 W:13 D:9 L:10
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  7. Brentford FC                   Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  8. Everton FC                     Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor -  9. Brighton & Hove Albion FC      Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 11. AFC Bournemouth                Pts:45   P:32 W:10 D:15 L:7
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 12. Fulham FC                      Pts:44   P:32 W:13 D:5 L:14
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 13. Crystal Palace FC              Pts:42   P:31 W:11 D:9 L:11
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 14. Newcastle United FC            Pts:42   P:32 W:12 D:6 L:14
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 15. Leeds United FC                Pts:33   P:31 W:7 D:12 L:12
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:33   P:32 W:8 D:9 L:15
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 17. West Ham United FC             Pts:32   P:32 W:8 D:8 L:16
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 18. Tottenham Hotspur FC           Pts:30   P:32 W:7 D:9 L:16
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:20   P:32 W:4 D:8 L:20
-2026-04-12 15:37:42 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:17   P:32 W:3 D:8 L:21
-2026-04-12 15:41:37 [INFO ] com.standings.StandingsExtractor - API response status: 200
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:70   P:32 W:21 D:7 L:4
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:64   P:31 W:19 D:7 L:5
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:55   P:31 W:15 D:10 L:6
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:55   P:32 W:16 D:7 L:9
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:52   P:32 W:15 D:7 L:10
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  6. Chelsea FC                     Pts:48   P:32 W:13 D:9 L:10
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  7. Brentford FC                   Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  8. Everton FC                     Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor -  9. Brighton & Hove Albion FC      Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 11. AFC Bournemouth                Pts:45   P:32 W:10 D:15 L:7
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 12. Fulham FC                      Pts:44   P:32 W:13 D:5 L:14
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 13. Crystal Palace FC              Pts:42   P:31 W:11 D:9 L:11
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 14. Newcastle United FC            Pts:42   P:32 W:12 D:6 L:14
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 15. Leeds United FC                Pts:33   P:31 W:7 D:12 L:12
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:33   P:32 W:8 D:9 L:15
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 17. West Ham United FC             Pts:32   P:32 W:8 D:8 L:16
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 18. Tottenham Hotspur FC           Pts:30   P:32 W:7 D:9 L:16
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:20   P:32 W:4 D:8 L:20
-2026-04-12 15:41:38 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:17   P:32 W:3 D:8 L:21
-2026-04-12 15:50:25 [INFO ] com.standings.StandingsExtractor - ETL job started
-2026-04-12 15:50:25 [INFO ] com.standings.StandingsExtractor - API response status: 200
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:70   P:32 W:21 D:7 L:4
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:64   P:31 W:19 D:7 L:5
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:55   P:31 W:15 D:10 L:6
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:55   P:32 W:16 D:7 L:9
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:52   P:32 W:15 D:7 L:10
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  6. Chelsea FC                     Pts:48   P:32 W:13 D:9 L:10
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  7. Brentford FC                   Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  8. Everton FC                     Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor -  9. Brighton & Hove Albion FC      Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 11. AFC Bournemouth                Pts:45   P:32 W:10 D:15 L:7
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 12. Fulham FC                      Pts:44   P:32 W:13 D:5 L:14
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 13. Crystal Palace FC              Pts:42   P:31 W:11 D:9 L:11
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 14. Newcastle United FC            Pts:42   P:32 W:12 D:6 L:14
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 15. Leeds United FC                Pts:33   P:31 W:7 D:12 L:12
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:33   P:32 W:8 D:9 L:15
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 17. West Ham United FC             Pts:32   P:32 W:8 D:8 L:16
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 18. Tottenham Hotspur FC           Pts:30   P:32 W:7 D:9 L:16
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:20   P:32 W:4 D:8 L:20
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:17   P:32 W:3 D:8 L:21
-2026-04-12 15:50:26 [INFO ] com.standings.StandingsExtractor - ETL job complete
-2026-04-12 21:57:55 [INFO ] com.standings.StandingsExtractor - ETL job started
-2026-04-12 21:57:56 [INFO ] com.standings.StandingsExtractor - API response status: 200
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:70   P:32 W:21 D:7 L:4
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:64   P:31 W:19 D:7 L:5
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:55   P:31 W:15 D:10 L:6
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:55   P:32 W:16 D:7 L:9
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:52   P:32 W:15 D:7 L:10
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  6. Chelsea FC                     Pts:48   P:32 W:13 D:9 L:10
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  7. Brentford FC                   Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  8. Everton FC                     Pts:47   P:32 W:13 D:8 L:11
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor -  9. Brighton & Hove Albion FC      Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:46   P:32 W:12 D:10 L:10
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 11. AFC Bournemouth                Pts:45   P:32 W:10 D:15 L:7
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 12. Fulham FC                      Pts:44   P:32 W:13 D:5 L:14
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 13. Crystal Palace FC              Pts:42   P:31 W:11 D:9 L:11
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 14. Newcastle United FC            Pts:42   P:32 W:12 D:6 L:14
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 15. Leeds United FC                Pts:33   P:31 W:7 D:12 L:12
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:33   P:32 W:8 D:9 L:15
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 17. West Ham United FC             Pts:32   P:32 W:8 D:8 L:16
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 18. Tottenham Hotspur FC           Pts:30   P:32 W:7 D:9 L:16
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:20   P:32 W:4 D:8 L:20
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:17   P:32 W:3 D:8 L:21
-2026-04-12 21:57:57 [INFO ] com.standings.StandingsExtractor - ETL job complete
+2026-04-13 19:44:55 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:70   P:32 W:21 D:7 L:4
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:64   P:31 W:19 D:7 L:5
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:55   P:32 W:15 D:10 L:7
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:55   P:32 W:16 D:7 L:9
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:52   P:32 W:15 D:7 L:10
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  6. Chelsea FC                     Pts:48   P:32 W:13 D:9 L:10
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  7. Brentford FC                   Pts:47   P:32 W:13 D:8 L:11
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  8. Everton FC                     Pts:47   P:32 W:13 D:8 L:11
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor -  9. Brighton & Hove Albion FC      Pts:46   P:32 W:12 D:10 L:10
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:46   P:32 W:12 D:10 L:10
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 11. AFC Bournemouth                Pts:45   P:32 W:10 D:15 L:7
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 12. Fulham FC                      Pts:44   P:32 W:13 D:5 L:14
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 13. Crystal Palace FC              Pts:42   P:31 W:11 D:9 L:11
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 14. Newcastle United FC            Pts:42   P:32 W:12 D:6 L:14
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 15. Leeds United FC                Pts:36   P:32 W:8 D:12 L:12
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:33   P:32 W:8 D:9 L:15
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 17. West Ham United FC             Pts:32   P:32 W:8 D:8 L:16
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 18. Tottenham Hotspur FC           Pts:30   P:32 W:7 D:9 L:16
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:20   P:32 W:4 D:8 L:20
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:17   P:32 W:3 D:8 L:21
+2026-04-13 19:44:56 [INFO ] com.standings.StandingsExtractor - ETL job complete
