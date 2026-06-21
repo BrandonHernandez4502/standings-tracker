@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standings Tracker</title>
+  <style>
+    /* ── Tokens ───────────────────────────────────────────────── */
+    :root {
+      --bg:           oklch(0.09 0.000 0);
+      --surface:      oklch(0.14 0.000 0);
+      --surface-hi:   oklch(0.19 0.006 110);
+      --border:       oklch(0.22 0.000 0);
+      --ink:          oklch(0.95 0.006 110);
+      --muted:        oklch(0.58 0.006 110);
+
+      --primary:      oklch(0.76 0.18  110);
+      --primary-dim:  oklch(0.20 0.07  110);
+      --primary-ring: oklch(0.76 0.18  110 / 0.35);
+
+      --accent:       oklch(0.72 0.19  42);
+      --accent-dim:   oklch(0.22 0.07  42);
+
+      --loss:         oklch(0.70 0.20  25);
+      --loss-dim:     oklch(0.20 0.08  25);
+
+      --font-ui:   system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --font-data: ui-monospace, 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+      /* 4pt spacing scale */
+      --sp-1: 0.25rem;   /*  4px */
+      --sp-2: 0.5rem;    /*  8px */
+      --sp-3: 0.75rem;   /* 12px */
+      --sp-4: 1rem;      /* 16px */
+      --sp-5: 1.25rem;   /* 20px */
+      --sp-6: 1.5rem;    /* 24px */
+      --sp-8: 2rem;      /* 32px */
+      --sp-12: 3rem;     /* 48px */
+
+      --header-h: 56px;
+      --max-w: 980px;
+
+      /* z-index scale */
+      --z-sticky:  10;
+      --z-toast:   50;
+    }
+
+    /* ── Reset ────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { color-scheme: dark; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      line-height: 1.5;
+      min-height: 100svh;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* ── Header ───────────────────────────────────────────────── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-sticky);
+      height: var(--header-h);
+      background: oklch(0.09 0.000 0 / 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--sp-6);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+    }
+
+    .wordmark {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    .attribution {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
+    /* ── Competition Switcher ─────────────────────────────────── */
+    .comp-nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--sp-5) var(--sp-6) 0;
+      display: flex;
+      gap: var(--sp-2);
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .comp-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.3125rem var(--sp-4);
+      border-radius: 9999px;
+      border: 1px solid oklch(0.30 0 0);
+      background: transparent;
+      color: var(--muted);
+      font-family: var(--font-ui);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.4;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 120ms ease-out, border-color 120ms ease-out, background 120ms ease-out;
+    }
+
+    .comp-btn:hover {
+      color: var(--ink);
+      border-color: oklch(0.42 0.000 0);
+    }
+
+    .comp-btn[aria-selected="true"] {
+      background: var(--primary-dim);
+      border-color: var(--primary-ring);
+      color: var(--primary);
+    }
+
+    .comp-btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* ── Main Content ─────────────────────────────────────────── */
+    #content-shell {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--sp-6) var(--sp-6) var(--sp-12);
+    }
+
+    #content {
+      transition: opacity 150ms ease-out, transform 150ms ease-out;
+    }
+
+    #content.is-switching {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+
+    /* ── Snapshot meta ────────────────────────────────────────── */
+    .snapshot-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-5);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      opacity: 0.7;
+      flex-shrink: 0;
+    }
+
+    /* ── Group Heading (WC) ───────────────────────────────────── */
+    .group-heading {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: var(--sp-8);
+      margin-bottom: var(--sp-2);
+    }
+
+    .group-heading:first-of-type { margin-top: 0; }
+
+    /* ── Table Wrapper ────────────────────────────────────────── */
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: var(--sp-1);
+    }
+
+    /* ── Table ────────────────────────────────────────────────── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    thead {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      padding: var(--sp-2) var(--sp-3);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    th.col-team,
+    th.col-form { text-align: left; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 100ms ease-out;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+
+    tbody tr:hover { background: var(--surface-hi); }
+
+    td {
+      padding: 0.5625rem var(--sp-3);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* Column roles */
+    .col-pos {
+      font-family: var(--font-data);
+      font-size: 0.8125rem;
+      color: var(--muted);
+      width: 2.5rem;
+      text-align: center;
+    }
+
+    .col-team {
+      text-align: left;
+      font-weight: 500;
+      color: var(--ink);
+      min-width: 10rem;
+      max-width: 17rem;
+    }
+
+    .col-num {
+      font-family: var(--font-data);
+      font-size: 0.8125rem;
+      color: oklch(0.76 0.005 110);
+      width: 2.75rem;
+    }
+
+    .col-gd {
+      font-family: var(--font-data);
+      font-size: 0.8125rem;
+      color: oklch(0.76 0.005 110);
+      width: 3rem;
+    }
+
+    .gd-pos { color: oklch(0.72 0.18 145); }
+    .gd-neg { color: oklch(0.62 0.12  25); }
+
+    .col-pts {
+      font-family: var(--font-data);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      width: 2.75rem;
+    }
+
+    .col-form {
+      text-align: left;
+      width: 8.5rem;
+      padding-right: var(--sp-4);
+    }
+
+    /* ── Form Badges ──────────────────────────────────────────── */
+    .form-row {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.375rem;
+      height: 1.375rem;
+      border-radius: 3px;
+      font-family: var(--font-data);
+      font-size: 0.625rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .badge-W { background: oklch(0.20 0.08 145); color: oklch(0.72 0.18 145); }
+    .badge-D { background: oklch(0.22 0.08  80); color: oklch(0.78 0.16  80); }
+    .badge-L { background: var(--loss-dim);      color: var(--loss);          }
+
+    /* ── State Messages ───────────────────────────────────────── */
+    .state-msg {
+      padding: var(--sp-12) 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    .state-msg strong {
+      display: block;
+      font-size: 0.9375rem;
+      color: var(--ink);
+      margin-bottom: var(--sp-2);
+      font-weight: 600;
+    }
+
+    .state-msg code {
+      font-family: var(--font-data);
+      font-size: 0.8125rem;
+      color: var(--primary);
+      background: var(--primary-dim);
+      padding: 0.125rem var(--sp-2);
+      border-radius: 3px;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 var(--sp-4); }
+      .comp-nav     { padding: var(--sp-4) var(--sp-4) 0; }
+      #content-shell { padding: var(--sp-5) var(--sp-4) var(--sp-8); }
+      .col-gf, .col-ga, .col-gd { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .col-wdl { display: none; }
+    }
+
+    /* ── Reduced Motion ───────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      #content       { transition: none; }
+      .comp-btn      { transition: none; }
+      tbody tr       { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <span class="wordmark">Standings Tracker</span>
+    <span class="attribution">
+      Updated daily ·
+      <a href="https://www.football-data.org/" target="_blank" rel="noopener noreferrer">football-data.org</a>
+    </span>
+  </div>
+</header>
+
+<div class="comp-nav" id="comp-nav" role="tablist" aria-label="Select competition"></div>
+
+<main>
+  <div id="content-shell">
+    <div id="content" aria-live="polite" aria-atomic="true">
+      <p class="state-msg">Loading&hellip;</p>
+    </div>
+  </div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Constants ──────────────────────────────────────────────── */
+  const COMP_NAMES = {
+    'PL':     'Premier League',
+    'WC':     'World Cup 2026',
+    'WC2026': 'World Cup 2026',
+    'WC26':   'World Cup 2026',
+  };
+
+  const WC_PRIORITY = ['WC2026', 'WC', 'WC26'];
+
+  /* ── State ──────────────────────────────────────────────────── */
+  let activeComp = null;
+
+  /* ── Elements ───────────────────────────────────────────────── */
+  const compNav = document.getElementById('comp-nav');
+  const content = document.getElementById('content');
+
+  /* ── Bootstrap ──────────────────────────────────────────────── */
+  async function init() {
+    try {
+      const comps = await apiFetch('/api/competitions');
+      if (!comps.length) {
+        setContent(`
+          <p class="state-msg">
+            <strong>No data yet.</strong>
+            Run the ETL pipeline to collect standings:
+            <br><br>
+            <code>mvn -q compile exec:java</code>
+          </p>`);
+        return;
+      }
+      buildNav(comps);
+      const defaultComp = WC_PRIORITY.find(c => comps.includes(c)) || comps[0];
+      await loadCompetition(defaultComp, true);
+    } catch {
+      setContent(`
+        <p class="state-msg">
+          <strong>Could not reach the API.</strong>
+          Start the server: <code>mvn spring-boot:run</code>
+        </p>`);
+    }
+  }
+
+  /* ── Navigation ─────────────────────────────────────────────── */
+  function buildNav(comps) {
+    compNav.innerHTML = '';
+    comps.forEach(code => {
+      const btn = document.createElement('button');
+      btn.className = 'comp-btn';
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', 'false');
+      btn.setAttribute('aria-controls', 'content');
+      btn.dataset.code = code;
+      btn.textContent = COMP_NAMES[code] || code;
+      btn.addEventListener('click', () => {
+        if (code !== activeComp) loadCompetition(code);
+      });
+      compNav.appendChild(btn);
+    });
+
+    compNav.addEventListener('keydown', handleTabKeyNav);
+  }
+
+  function handleTabKeyNav(e) {
+    const tabs = [...compNav.querySelectorAll('[role="tab"]')];
+    const idx = tabs.indexOf(document.activeElement);
+    if (idx === -1) return;
+    let next = -1;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  next = (idx + 1) % tabs.length;
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    next = (idx - 1 + tabs.length) % tabs.length;
+    if (next !== -1) { e.preventDefault(); tabs[next].focus(); tabs[next].click(); }
+  }
+
+  function setActiveTab(code) {
+    compNav.querySelectorAll('[role="tab"]').forEach(btn => {
+      btn.setAttribute('aria-selected', String(btn.dataset.code === code));
+    });
+  }
+
+  /* ── Data ───────────────────────────────────────────────────── */
+  async function apiFetch(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  async function loadCompetition(code, initial = false) {
+    activeComp = code;
+    setActiveTab(code);
+
+    if (!initial) {
+      content.classList.add('is-switching');
+      await sleep(140);
+    }
+
+    try {
+      const rows = await apiFetch(`/api/standings/${code}`);
+      renderCompetition(code, rows);
+    } catch {
+      setContent(`
+        <p class="state-msg">
+          <strong>Could not load standings.</strong>
+          Check that the server is running and the database is connected.
+        </p>`);
+    } finally {
+      content.classList.remove('is-switching');
+    }
+  }
+
+  /* ── Render ─────────────────────────────────────────────────── */
+  function renderCompetition(code, rows) {
+    if (!rows.length) {
+      setContent(`
+        <p class="state-msg">
+          <strong>No data for ${escHtml(COMP_NAMES[code] || code)}.</strong>
+          Add <code>${escHtml(code)}</code> to <code>api.competition.codes</code> and run the pipeline.
+        </p>`);
+      return;
+    }
+
+    const isGrouped = rows.some(r => r.groupName && r.groupName !== '');
+    const dateStr   = formatDate(rows[0].snapshotDate);
+    const name      = COMP_NAMES[code] || code;
+
+    let html = `
+      <div class="snapshot-meta">
+        <span class="pulse" aria-hidden="true"></span>
+        <span>${escHtml(name)} · Snapshot ${dateStr}</span>
+      </div>`;
+
+    html += isGrouped ? renderGrouped(rows) : `<div class="table-wrap">${renderTable(rows, name)}</div>`;
+    setContent(html);
+  }
+
+  function renderGrouped(rows) {
+    /* Preserve server-order (GROUP_A before GROUP_B, etc.) */
+    const groups = new Map();
+    rows.forEach(r => {
+      const key = r.groupName || 'Unknown';
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(r);
+    });
+
+    let html = '';
+    for (const [key, groupRows] of groups) {
+      const label = key.replace('_', ' '); /* GROUP_A → GROUP A */
+      html += `<h2 class="group-heading">${escHtml(label)}</h2>`;
+      html += `<div class="table-wrap">${renderTable(groupRows, label)}</div>`;
+    }
+    return html;
+  }
+
+  function renderTable(rows, captionText) {
+    return `
+      <table>
+        <caption>${escHtml(captionText)}</caption>
+        <thead>
+          <tr>
+            <th class="col-pos"  scope="col">#</th>
+            <th class="col-team" scope="col">Team</th>
+            <th class="col-num"  scope="col">P</th>
+            <th class="col-num col-wdl" scope="col">W</th>
+            <th class="col-num col-wdl" scope="col">D</th>
+            <th class="col-num col-wdl" scope="col">L</th>
+            <th class="col-num col-gf" scope="col">GF</th>
+            <th class="col-num col-ga" scope="col">GA</th>
+            <th class="col-gd"  scope="col">GD</th>
+            <th class="col-pts" scope="col">Pts</th>
+            <th class="col-form" scope="col">Form</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(renderRow).join('')}
+        </tbody>
+      </table>`;
+  }
+
+  function renderRow(r) {
+    const gdVal = r.goalDifference;
+    const gd    = gdVal > 0 ? `+${gdVal}` : String(gdVal);
+    const gdCls = gdVal > 0 ? ' gd-pos' : gdVal < 0 ? ' gd-neg' : '';
+
+    return `
+      <tr>
+        <td class="col-pos">${r.position}</td>
+        <td class="col-team">${escHtml(r.teamName)}</td>
+        <td class="col-num">${r.played}</td>
+        <td class="col-num col-wdl">${r.won}</td>
+        <td class="col-num col-wdl">${r.drawn}</td>
+        <td class="col-num col-wdl">${r.lost}</td>
+        <td class="col-num col-gf">${r.goalsFor}</td>
+        <td class="col-num col-ga">${r.goalsAgainst}</td>
+        <td class="col-gd${gdCls}">${gd}</td>
+        <td class="col-pts">${r.points}</td>
+        <td class="col-form">${renderForm(r.form)}</td>
+      </tr>`;
+  }
+
+  function renderForm(form) {
+    if (!form) return '<span class="form-row"></span>';
+    const LABEL = { W: 'Win', D: 'Draw', L: 'Loss' };
+    const badges = form.split(',').slice(0, 5).map(raw => {
+      const r = raw.trim();
+      return `<span class="badge badge-${r}" aria-label="${LABEL[r] || r}">${r}</span>`;
+    }).join('');
+    return `<span class="form-row" aria-label="Recent form">${badges}</span>`;
+  }
+
+  /* ── Utilities ──────────────────────────────────────────────── */
+  function setContent(html) {
+    content.innerHTML = html;
+  }
+
+  function sleep(ms) {
+    return new Promise(r => setTimeout(r, ms));
+  }
+
+  function formatDate(raw) {
+    if (!raw) return '';
+    /* Jackson may return LocalDate as [2026, 6, 21] if write-dates-as-timestamps=true */
+    const d = Array.isArray(raw)
+      ? new Date(raw[0], raw[1] - 1, raw[2])
+      : new Date(raw + 'T00:00:00');
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /* ── Go ─────────────────────────────────────────────────────── */
+  init();
+}());
+</script>
+
+</body>
+</html>

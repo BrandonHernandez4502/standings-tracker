@@ -1,9 +1,12 @@
 api.token=your_token_here
 api.base.url=https://api.football-data.org/v4
-api.league.code=PL
+api.competition.codes=PL,WC
 
 db.url=jdbc:postgresql://localhost:5432/standings
 db.user=your_db_username
 db.password=
 
 scheduler.cron=0 0 18 * * ?
+
+server.port=8080
+spring.jackson.serialization.write-dates-as-timestamps=false

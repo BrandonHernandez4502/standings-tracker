@@ -1,0 +1,758 @@
+2026-05-17 21:39:08 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:79   P:36 W:24 D:7 L:5
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:77   P:36 W:23 D:8 L:5
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:55   P:36 W:13 D:16 L:7
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  8. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor -  9. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 10. Chelsea FC                     Pts:49   P:36 W:13 D:10 L:13
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:36 W:9 D:11 L:16
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:36 W:4 D:9 L:23
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-17 21:39:11 [INFO ] com.standings.StandingsExtractor - ETL job complete
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 4.6 kBProgress (2): 4.6 kB | 3.1 kBProgress (2): 9.7 kB | 3.1 kBProgress (2): 9.7 kB | 7.7 kBProgress (2): 14 kB | 7.7 kB Progress (2): 14 kB | 12 kB Progress (2): 14 kB | 17 kBProgress (2): 14 kB | 20 kBProgress (2): 14 kB | 21 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 29 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 40 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-05-18 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-18 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:82   P:37 W:25 D:7 L:5
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:82   P:37 W:25 D:7 L:5
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:77   P:36 W:23 D:8 L:5
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:77   P:36 W:23 D:8 L:5
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:55   P:36 W:13 D:16 L:7
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:55   P:36 W:13 D:16 L:7
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  8. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  8. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  9. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor -  9. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 10. Chelsea FC                     Pts:49   P:36 W:13 D:10 L:13
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 10. Chelsea FC                     Pts:49   P:36 W:13 D:10 L:13
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:36 W:9 D:11 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:36 W:9 D:11 L:16
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:37 W:4 D:9 L:24
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:37 W:4 D:9 L:24
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - ETL job complete
+2026-05-18 18:00:05 [INFO ] com.standings.StandingsExtractor - ETL job complete
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.396 s
+[INFO] Finished at: 2026-05-18T18:00:05-04:00
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 4.6 kBProgress (2): 7.7 kB | 4.6 kBProgress (2): 7.7 kB | 9.7 kBProgress (2): 7.7 kB | 14 kB Progress (2): 12 kB | 14 kB Progress (2): 17 kB | 14 kBProgress (2): 20 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 44 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 59 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-05-19 18:00:02 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-19 18:00:02 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:82   P:37 W:25 D:7 L:5
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:82   P:37 W:25 D:7 L:5
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:78   P:37 W:23 D:9 L:5
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:78   P:37 W:23 D:9 L:5
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:56   P:37 W:13 D:17 L:7
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:56   P:37 W:13 D:17 L:7
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  8. Chelsea FC                     Pts:52   P:37 W:14 D:10 L:13
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  8. Chelsea FC                     Pts:52   P:37 W:14 D:10 L:13
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  9. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor -  9. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:37 W:9 D:11 L:17
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:37 W:9 D:11 L:17
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:37 W:4 D:9 L:24
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:37 W:4 D:9 L:24
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - ETL job complete
+2026-05-19 18:00:05 [INFO ] com.standings.StandingsExtractor - ETL job complete
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.421 s
+[INFO] Finished at: 2026-05-19T18:00:05-04:00
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 4.6 kBProgress (2): 7.7 kB | 4.6 kBProgress (2): 7.7 kB | 9.7 kBProgress (2): 12 kB | 9.7 kB Progress (2): 17 kB | 9.7 kBProgress (2): 17 kB | 14 kB Progress (2): 20 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 34 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 47 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-05-20 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-20 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-20 18:00:04 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-20 18:00:04 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsRepository - Inserted 20 snapshots successfully
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:82   P:37 W:25 D:7 L:5
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  1. Arsenal FC                     Pts:82   P:37 W:25 D:7 L:5
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:78   P:37 W:23 D:9 L:5
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  2. Manchester City FC             Pts:78   P:37 W:23 D:9 L:5
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  3. Manchester United FC           Pts:68   P:37 W:19 D:11 L:7
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  4. Aston Villa FC                 Pts:62   P:37 W:18 D:8 L:11
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  5. Liverpool FC                   Pts:59   P:37 W:17 D:8 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:56   P:37 W:13 D:17 L:7
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  6. AFC Bournemouth                Pts:56   P:37 W:13 D:17 L:7
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  7. Brighton & Hove Albion FC      Pts:53   P:37 W:14 D:11 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  8. Chelsea FC                     Pts:52   P:37 W:14 D:10 L:13
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  8. Chelsea FC                     Pts:52   P:37 W:14 D:10 L:13
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  9. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor -  9. Brentford FC                   Pts:52   P:37 W:14 D:10 L:13
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 10. Sunderland AFC                 Pts:51   P:37 W:13 D:12 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 11. Newcastle United FC            Pts:49   P:37 W:14 D:7 L:16
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 12. Everton FC                     Pts:49   P:37 W:13 D:10 L:14
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 13. Fulham FC                      Pts:49   P:37 W:14 D:7 L:16
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 14. Leeds United FC                Pts:47   P:37 W:11 D:14 L:12
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 15. Crystal Palace FC              Pts:45   P:37 W:11 D:12 L:14
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 16. Nottingham Forest FC           Pts:43   P:37 W:11 D:10 L:16
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:37 W:9 D:11 L:17
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 17. Tottenham Hotspur FC           Pts:38   P:37 W:9 D:11 L:17
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 18. West Ham United FC             Pts:36   P:37 W:9 D:9 L:19
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:37 W:4 D:9 L:24
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 19. Burnley FC                     Pts:21   P:37 W:4 D:9 L:24
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - 20. Wolverhampton Wanderers FC     Pts:19   P:37 W:3 D:10 L:24
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - ETL job complete
+2026-05-20 18:00:05 [INFO ] com.standings.StandingsExtractor - ETL job complete
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.394 s
+[INFO] Finished at: 2026-05-20T18:00:05-04:00
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 4.6 kBProgress (2): 8.0 kB | 4.6 kBProgress (2): 8.0 kB | 9.7 kBProgress (2): 11 kB | 9.7 kB Progress (2): 11 kB | 14 kB Progress (2): 16 kB | 14 kBProgress (2): 20 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 32 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 40 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-05-27 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-27 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-05-27 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-05-27 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.323 s
+[INFO] Finished at: 2026-05-27T18:00:05-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Progress (1): 3.2 kBProgress (2): 3.2 kB | 4.0 kBProgress (2): 3.2 kB | 7.7 kBProgress (2): 7.9 kB | 7.7 kBProgress (2): 7.9 kB | 10 kB Progress (2): 12 kB | 10 kB Progress (2): 16 kB | 10 kBProgress (2): 20 kB | 10 kBProgress (2): 21 kB | 10 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (10 kB at 17 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 30 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-01 18:00:04 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-01 18:00:04 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-01 18:00:06 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-01 18:00:06 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.085 s
+[INFO] Finished at: 2026-06-01T18:00:06-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 3.9 kBProgress (2): 3.1 kB | 7.7 kBProgress (2): 7.7 kB | 7.7 kBProgress (2): 7.7 kB | 10 kB Progress (2): 12 kB | 10 kB Progress (2): 17 kB | 10 kBProgress (2): 20 kB | 10 kBProgress (2): 21 kB | 10 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (10 kB at 27 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 46 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-02 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-02 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-02 18:00:04 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-02 18:00:04 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.486 s
+[INFO] Finished at: 2026-06-02T18:00:04-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Progress (1): 4.8 kBProgress (1): 7.7 kBProgress (1): 14 kB Progress (1): 14 kBProgress (2): 14 kB | 3.1 kBProgress (2): 14 kB | 7.7 kBProgress (2): 14 kB | 12 kB Progress (2): 14 kB | 17 kBProgress (2): 14 kB | 20 kBProgress (2): 14 kB | 21 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 37 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 45 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-05 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-05 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-05 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-05 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.081 s
+[INFO] Finished at: 2026-06-05T18:00:05-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 4.6 kBProgress (2): 7.7 kB | 4.6 kBProgress (2): 7.7 kB | 9.7 kBProgress (2): 7.7 kB | 14 kB Progress (2): 12 kB | 14 kB Progress (2): 17 kB | 14 kBProgress (2): 20 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 35 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 45 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-06 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-06 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-06 18:00:04 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-06 18:00:04 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-06 18:00:04 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-06 18:00:04 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-06 18:00:35 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-06 18:00:35 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  33.274 s
+[INFO] Finished at: 2026-06-06T18:00:35-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.8 kBProgress (1): 9.3 kBProgress (1): 14 kB Progress (2): 14 kB | 3.1 kBProgress (2): 14 kB | 7.7 kBProgress (2): 14 kB | 12 kB Progress (2): 14 kB | 17 kBProgress (2): 14 kB | 20 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 37 kB/s)
+Progress (1): 21 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 46 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-07 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-07 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-07 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-07 18:00:05 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.143 s
+[INFO] Finished at: 2026-06-07T18:00:05-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Progress (1): 3.1 kBProgress (1): 7.7 kBProgress (1): 12 kB Progress (1): 17 kBProgress (1): 20 kBProgress (1): 21 kBProgress (2): 21 kB | 4.8 kBProgress (2): 21 kB | 5.7 kBProgress (2): 21 kB | 12 kB Progress (2): 21 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 32 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 42 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-08 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-08 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-08 18:00:04 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-08 18:00:04 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-08 18:00:04 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-08 18:00:04 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-08 18:00:36 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-08 18:00:36 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  34.776 s
+[INFO] Finished at: 2026-06-08T18:00:36-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 4.8 kBProgress (2): 3.1 kB | 5.8 kBProgress (2): 7.7 kB | 5.8 kBProgress (2): 12 kB | 5.8 kB Progress (2): 12 kB | 12 kB Progress (2): 12 kB | 14 kBProgress (2): 17 kB | 14 kBProgress (2): 20 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 34 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 42 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-09 18:00:02 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-09 18:00:02 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-09 18:00:03 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-09 18:00:03 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-09 18:00:03 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-09 18:00:03 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-09 18:00:34 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-09 18:00:34 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  32.996 s
+[INFO] Finished at: 2026-06-09T18:00:34-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 3.1 kBProgress (2): 3.1 kB | 4.6 kBProgress (2): 7.7 kB | 4.6 kBProgress (2): 7.7 kB | 9.7 kBProgress (2): 12 kB | 9.7 kB Progress (2): 12 kB | 14 kB Progress (2): 17 kB | 14 kBProgress (2): 20 kB | 14 kBProgress (2): 21 kB | 14 kB                           Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 38 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 45 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-10 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-10 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-10 18:00:04 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-10 18:00:04 [WARN ] com.standings.StandingsExtractor - Attempt 1/3 — request failed: Remote host terminated the handshake
+2026-06-10 18:00:04 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-10 18:00:04 [INFO ] com.standings.StandingsExtractor - Waiting 30 seconds before retrying...
+2026-06-10 18:00:35 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-10 18:00:35 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  33.122 s
+[INFO] Finished at: 2026-06-10T18:00:35-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Progress (1): 4.6 kBProgress (1): 9.7 kBProgress (1): 14 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 30 kB/s)
+Progress (1): 3.1 kBProgress (1): 7.7 kBProgress (1): 12 kB Progress (1): 17 kBProgress (1): 20 kBProgress (1): 21 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 38 kB/s)
+[INFO] 
+[INFO] ------------------< com.standings:standings-tracker >-------------------
+[INFO] Building standings-tracker 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.6.3:java (default-cli) @ standings-tracker ---
+2026-06-11 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-11 18:00:03 [INFO ] com.standings.StandingsExtractor - ETL job started
+2026-06-11 18:00:06 [INFO ] com.standings.StandingsExtractor - API response status: 200
+2026-06-11 18:00:06 [INFO ] com.standings.StandingsExtractor - API response status: 200
+[WARNING] 
+org.postgresql.util.PSQLException: The server requested SCRAM-based authentication, but the password is an empty string.
+    at org.postgresql.core.v3.ConnectionFactoryImpl.lambda$doAuthentication$4 (ConnectionFactoryImpl.java:849)
+    at org.postgresql.core.v3.AuthenticationPluginManager.withPassword (AuthenticationPluginManager.java:82)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication (ConnectionFactoryImpl.java:840)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect (ConnectionFactoryImpl.java:207)
+    at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl (ConnectionFactoryImpl.java:262)
+    at org.postgresql.core.ConnectionFactory.openConnection (ConnectionFactory.java:54)
+    at org.postgresql.jdbc.PgConnection.<init> (PgConnection.java:273)
+    at org.postgresql.Driver.makeConnection (Driver.java:446)
+    at org.postgresql.Driver.connect (Driver.java:298)
+    at java.sql.DriverManager.getConnection (DriverManager.java:683)
+    at java.sql.DriverManager.getConnection (DriverManager.java:230)
+    at com.standings.StandingsRepository.insertAll (StandingsRepository.java:44)
+    at com.standings.StandingsExtractor.run (StandingsExtractor.java:59)
+    at com.standings.StandingsExtractor.main (StandingsExtractor.java:37)
+    at jdk.internal.reflect.DirectMethodHandleAccessor.invoke (DirectMethodHandleAccessor.java:103)
+    at java.lang.reflect.Method.invoke (Method.java:580)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod (AbstractExecJavaBase.java:402)
+    at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod (ExecJavaMojo.java:142)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader (AbstractExecJavaBase.java:377)
+    at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0 (AbstractExecJavaBase.java:287)
+    at java.lang.Thread.run (Thread.java:1583)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.202 s
+[INFO] Finished at: 2026-06-11T18:00:06-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.6.3:java (default-cli) on project standings-tracker: An exception occurred while executing the Java class. The server requested SCRAM-based authentication, but the password is an empty string. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

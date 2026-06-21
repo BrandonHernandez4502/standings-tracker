@@ -22,8 +22,11 @@ public class StandingsTransformerTest {
 
         String json = """
                 {
+                  "season": { "startDate": "2025-08-16" },
                   "standings": [
                     {
+                      "stage": "REGULAR_SEASON",
+                      "type": "TOTAL",
                       "table": [
                         {
                           "position": 1,
@@ -62,50 +65,64 @@ public class StandingsTransformerTest {
 
     @Test
     void transformReturnsTwoSnapshots() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals(2, snapshots.size());
     }
 
     @Test
     void transformMapsTeamNameCorrectly() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals("Arsenal FC", snapshots.get(0).teamName());
     }
 
     @Test
     void transformMapsPositionCorrectly() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals(1, snapshots.get(0).position());
         assertEquals(2, snapshots.get(1).position());
     }
 
     @Test
     void transformMapsPointsCorrectly() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals(68, snapshots.get(0).points());
     }
 
     @Test
     void transformSetsLeagueId() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals("PL", snapshots.get(0).leagueId());
     }
 
     @Test
-    void transformSetsSnapshotDateToToday() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
-        assertEquals(LocalDate.now(), snapshots.get(0).snapshotDate());
+    void transformSetsSnapshotDateToPassedDate() {
+        LocalDate testDate = LocalDate.of(2026, 6, 15);
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", testDate);
+        assertEquals(testDate, snapshots.get(0).snapshotDate());
+    }
+
+    @Test
+    void transformExtractsSeasonFromStartDate() {
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
+        assertEquals(2025, snapshots.get(0).season());
     }
 
     @Test
     void transformMapsFormCorrectly() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals("W,W,D,W,L", snapshots.get(0).form());
     }
 
     @Test
     void transformMapsGoalDifferenceCorrectly() {
-        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL");
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
         assertEquals(39, snapshots.get(0).goalDifference());
+    }
+
+    @Test
+    void transformSetsEmptyGroupNameForLeagueStandings() {
+        // League responses have no "group" field — groupName should default to ""
+        List<StandingSnapshot> snapshots = transformer.transform(fakeApiResponse, "PL", LocalDate.now());
+        assertEquals("", snapshots.get(0).groupName());
     }
 }

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public record StandingSnapshot (
     String leagueId,
+    int season,
+    String groupName,
     int teamId,
     String teamName,
     LocalDate snapshotDate,
