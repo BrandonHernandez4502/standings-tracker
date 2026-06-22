@@ -1,12 +1,15 @@
-api.token=your_token_here
+# Local development: copy this file to application.properties and fill in values.
+# Cloud deployment: set the equivalent environment variables listed in comments below.
+
+api.token=your_token_here          # env: API_TOKEN
 api.base.url=https://api.football-data.org/v4
-api.competition.codes=PL,WC
+api.competition.codes=PL,WC        # env: API_COMPETITION_CODES
 
-db.url=jdbc:postgresql://localhost:5432/standings
-db.user=your_db_username
-db.password=
+db.url=jdbc:postgresql://localhost:5432/standings  # env: DB_URL
+db.user=your_db_username                           # env: DB_USER
+db.password=                                       # env: DB_PASSWORD
 
-scheduler.cron=0 0 18 * * ?
+scheduler.cron=0 0 0/2 * * ?      # env: SCHEDULER_CRON
 
 server.port=8080
 spring.jackson.serialization.write-dates-as-timestamps=false

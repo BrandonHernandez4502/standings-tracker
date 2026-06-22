@@ -32,9 +32,17 @@ public class StandingsExtractor {
         try (InputStream in = StandingsExtractor.class
                 .getClassLoader()
                 .getResourceAsStream("application.properties")) {
-            props.load(in);
+            if (in != null) props.load(in);
         } catch (Exception e) {
             throw new RuntimeException("Could not load application.properties", e);
+        }
+        String[] keys = {
+            "api.token", "api.base.url", "api.competition.codes",
+            "db.url", "db.user", "db.password", "scheduler.cron"
+        };
+        for (String key : keys) {
+            String envVal = System.getenv(key.toUpperCase().replace('.', '_'));
+            if (envVal != null) props.setProperty(key, envVal);
         }
         return props;
     }
