@@ -1,8 +1,27 @@
-# Premier League Standings Tracker
+# Football Standings Tracker
 
-A Java ETL pipeline that pulls daily Premier League standings from the [football-data.org](https://www.football-data.org/) API, transforms the raw JSON into structured Java objects, and stores a daily snapshot in a local PostgreSQL database. Historical data enables queries for position changes, points trends, and consistency metrics over time.
+A Java ETL pipeline and web app that pulls daily standings from the [football-data.org](https://www.football-data.org/) API for multiple competitions, stores a historical snapshot per team per day in PostgreSQL, and serves a live standings dashboard at a public URL.
 
-Built as a portfolio project targeting data engineering roles, covering core concepts: incremental loading, idempotency, snapshot design, SQL window functions, and scheduled pipelines.
+Currently tracking the **2025-26 Premier League** final standings and the **2026 FIFA World Cup** live group stage standings.
+
+Built as a portfolio project targeting data engineering roles, covering core concepts: incremental loading, idempotency, multi-competition snapshot design, SQL window functions, scheduled pipelines, and cloud deployment.
+
+---
+
+## Live Site
+
+Deployed on [Fly.io](https://fly.io) with [Neon](https://neon.tech) managed PostgreSQL. Standings update automatically every 2 hours.
+
+---
+
+## Features
+
+- **Multi-competition support** — track any competition available on football-data.org by adding its code to config
+- **World Cup group stage** — renders grouped standings (Group A–L) automatically when group data is present
+- **Season tracking** — each snapshot is tagged with its season year, enabling historical queries across seasons without data collision
+- **Backfill** — fetch standings for any past date range via a single command
+- **Idempotent ETL** — safe to re-run; duplicate snapshots are silently ignored (`ON CONFLICT DO NOTHING`)
+- **Live web UI** — dark-themed standings dashboard with form badges, goal difference colouring, and competition switcher
 
 ---
 
@@ -12,35 +31,37 @@ Built as a portfolio project targeting data engineering roles, covering core con
 football-data.org API
         |
         v
-  StandingsExtractor      <- Extract: HTTP request + retry logic
-        |
+  StandingsExtractor      <- Extract: HTTP GET + 3-attempt retry
+        |                    supports ?date=YYYY-MM-DD for backfill
         v
-  StandingsTransformer    <- Transform: JSON -> StandingSnapshot objects
-        |
+  StandingsTransformer    <- Transform: JSON -> StandingSnapshot records
+        |                    extracts season year from API response
         v
   StandingsRepository     <- Load: JDBC batch insert into PostgreSQL
         |
         v
-  standing_snapshots      <- One row per team per day (snapshot model)
+  standing_snapshots      <- one row per team per day per season
 ```
 
-The pipeline runs automatically every day at 6pm via a Quartz cron scheduler.
+The pipeline runs automatically every 2 hours via Spring's `@Scheduled` cron. The scheduler lives inside the Spring Boot process, which stays alive 24/7 on Fly.io.
 
 ---
 
 ## Tech Stack
 
-| Purpose       | Technology                        |
-|---------------|-----------------------------------|
-| Language      | Java 17                           |
-| Build tool    | Maven                             |
-| JSON parsing  | Jackson 2.17.0                    |
-| HTTP client   | Java built-in HttpClient          |
-| Database      | PostgreSQL                        |
-| DB access     | JDBC + PostgreSQL driver 42.7.3   |
-| Scheduling    | Quartz 2.3.2                      |
-| Logging       | SLF4J + Logback 1.2.12            |
-| Testing       | JUnit 5.10.2                      |
+| Purpose        | Technology                         |
+|----------------|------------------------------------|
+| Language       | Java 17                            |
+| Framework      | Spring Boot 3.2.5                  |
+| Build tool     | Maven                              |
+| JSON parsing   | Jackson 2.17.0                     |
+| HTTP client    | Java built-in HttpClient           |
+| Database       | PostgreSQL 16 (Neon in production) |
+| DB access      | JDBC + PostgreSQL driver 42.7.3    |
+| Scheduling     | Spring `@Scheduled`                |
+| Logging        | SLF4J + Logback                    |
+| Testing        | JUnit 5.10.2                       |
+| Deployment     | Fly.io + Docker                    |
 
 ---
 
@@ -48,20 +69,25 @@ The pipeline runs automatically every day at 6pm via a Quartz cron scheduler.
 
 ```
 standings-tracker/
+├── Dockerfile
+├── fly.toml
 ├── pom.xml
-├── queries.sql                          <- Analytics SQL queries
+├── queries.sql                           <- Analytics SQL queries
 └── src/
     ├── main/
     │   ├── java/com/standings/
-    │   │   ├── StandingsExtractor.java  <- Extract layer + entry point
+    │   │   ├── Application.java          <- Spring Boot entry point
+    │   │   ├── StandingsExtractor.java   <- Extract layer + backfill logic
     │   │   ├── StandingsTransformer.java <- Transform layer
-    │   │   ├── StandingsRepository.java <- Load layer (JDBC)
-    │   │   ├── StandingSnapshot.java    <- Data model (Java Record)
-    │   │   ├── EtlJob.java              <- Quartz Job implementation
-    │   │   └── Scheduler.java           <- Starts the cron scheduler
+    │   │   ├── StandingsRepository.java  <- Load layer (JDBC)
+    │   │   ├── StandingSnapshot.java     <- Data model (Java Record)
+    │   │   ├── StandingsController.java  <- REST API endpoints
+    │   │   └── EtlScheduler.java         <- Cron scheduler
     │   └── resources/
-    │       ├── application.properties   <- Config (gitignored)
-    │       └── logback.xml              <- Logging config
+    │       ├── application.properties    <- Config (gitignored)
+    │       ├── application.properties.example
+    │       ├── static/index.html         <- Web UI
+    │       └── logback.xml               <- Logging config
     └── test/
         └── java/com/standings/
             └── StandingsTransformerTest.java
@@ -69,25 +95,22 @@ standings-tracker/
 
 ---
 
-## Setup
+## Local Setup
 
 ### Prerequisites
 - Java 17+
 - Maven
-- PostgreSQL
+- PostgreSQL 16
 
 ### 1. Create the database
-
-```bash
-pg_ctl -D ~/postgres-data -l ~/postgres-data/logfile start
-psql -c "CREATE DATABASE standings;"
-```
 
 ```sql
 CREATE TABLE standing_snapshots (
     id              BIGSERIAL PRIMARY KEY,
     snapshot_date   DATE NOT NULL,
     league_id       VARCHAR(20) NOT NULL,
+    group_name      VARCHAR(50) NOT NULL DEFAULT '',
+    season          INTEGER NOT NULL DEFAULT 0,
     team_id         INTEGER NOT NULL,
     team_name       VARCHAR(100) NOT NULL,
     position        INTEGER NOT NULL,
@@ -100,43 +123,41 @@ CREATE TABLE standing_snapshots (
     goal_difference INTEGER NOT NULL,
     points          INTEGER NOT NULL,
     form            VARCHAR(20),
-    UNIQUE (snapshot_date, league_id, team_id)
+    UNIQUE (snapshot_date, league_id, group_name, team_id)
 );
 ```
 
 ### 2. Configure credentials
 
-Copy the template and fill in your values:
-
 ```bash
 cp src/main/resources/application.properties.example src/main/resources/application.properties
 ```
 
-```properties
-api.token=your_token_here
-api.base.url=https://api.football-data.org/v4
-api.league.code=PL
+Fill in your values. Get a free API token at [football-data.org](https://www.football-data.org/).
 
-db.url=jdbc:postgresql://localhost:5432/standings
-db.user=your_db_username
-db.password=
-
-scheduler.cron=0 0 18 * * ?
-```
-
-Get a free API token at [football-data.org](https://www.football-data.org/).
-
-### 3. Run manually (one-time snapshot)
+### 3. Run the app
 
 ```bash
+# Start the web server + scheduler (http://localhost:8080)
+mvn spring-boot:run
+
+# Run a one-time ETL snapshot
 mvn -q compile exec:java
+
+# Backfill historical data for a date range
+mvn -q compile exec:java -Dexec.args="2026-06-11 2026-06-20"
 ```
 
-### 4. Run the scheduler (daily at 6pm)
+---
 
-```bash
-mvn compile exec:java -Dexec.mainClass=com.standings.Scheduler
-```
+## API Endpoints
+
+| Endpoint | Description |
+|---|---|
+| `GET /api/competitions` | List competition codes that have data |
+| `GET /api/standings/{competition}` | Latest snapshot for the most recent season |
+| `GET /api/standings/{competition}?season=2025` | Latest snapshot for a specific season |
+| `GET /api/seasons/{competition}` | All seasons available for a competition |
 
 ---
 
@@ -146,7 +167,7 @@ mvn compile exec:java -Dexec.mainClass=com.standings.Scheduler
 mvn test
 ```
 
-Tests cover the transform layer using a fake API response — no database or network required.
+Tests cover the transform layer using a hardcoded fake API response — no database or network required.
 
 ---
 
