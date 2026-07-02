@@ -76,6 +76,17 @@ public class StandingsExtractor {
         logger.info("Backfill complete");
     }
 
+    static JsonNode fetchCompetitionJson(String path) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(BASE_URL + path))
+            .header("X-Auth-Token", API_TOKEN)
+            .GET()
+            .build();
+        HttpResponse<String> response = fetchWithRetry(client, request);
+        return new ObjectMapper().readTree(response.body());
+    }
+
     private static void runCompetition(String competitionCode, LocalDate date) throws Exception {
         logger.info("Fetching standings for {} on {}", competitionCode, date);
 

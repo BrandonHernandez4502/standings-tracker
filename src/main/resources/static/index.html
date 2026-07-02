@@ -361,12 +361,78 @@
       border-radius: 3px;
     }
 
+    /* ── View Toggle (WC only) ────────────────────────────────── */
+    .view-toggle {
+      display: flex;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-5);
+    }
+
+    /* ── Bracket Grid ─────────────────────────────────────────── */
+    .bracket-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: var(--sp-3);
+    }
+
+    .match-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .match-row {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-2) var(--sp-3);
+    }
+
+    .match-row + .match-row { border-top: 1px solid var(--border); }
+
+    .match-row.is-winner { background: var(--primary-dim); }
+    .match-row.is-winner .match-team  { color: var(--primary); font-weight: 600; }
+    .match-row.is-winner .match-score { color: var(--primary); }
+
+    .match-team {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.875rem;
+      color: var(--ink);
+    }
+
+    .match-score {
+      font-family: var(--font-data);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: oklch(0.76 0.005 110);
+      min-width: 1.25rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .match-footer {
+      padding: var(--sp-1) var(--sp-3);
+      font-size: 0.6875rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .match-footer.is-live { color: oklch(0.72 0.18 145); }
+
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 640px) {
       .header-inner { padding: 0 var(--sp-4); }
       .comp-nav     { padding: var(--sp-4) var(--sp-4) 0; }
       #content-shell { padding: var(--sp-5) var(--sp-4) var(--sp-8); }
       .col-gf, .col-ga, .col-gd { display: none; }
+      .bracket-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 420px) {
@@ -419,6 +485,7 @@
 
   /* ── State ──────────────────────────────────────────────────── */
   let activeComp = null;
+  let activeView = 'standings';
 
   /* ── Elements ───────────────────────────────────────────────── */
   const compNav = document.getElementById('comp-nav');
@@ -494,6 +561,7 @@
   }
 
   async function loadCompetition(code, initial = false) {
+    if (code !== activeComp) activeView = 'standings';
     activeComp = code;
     setActiveTab(code);
 
@@ -503,8 +571,12 @@
     }
 
     try {
-      const rows = await apiFetch(`/api/standings/${code}`);
-      renderCompetition(code, rows);
+      if (activeView === 'bracket' && isWorldCup(code)) {
+        await loadBracketView(code);
+      } else {
+        const rows = await apiFetch(`/api/standings/${code}`);
+        renderCompetition(code, rows);
+      }
     } catch {
       setContent(`
         <p class="state-msg">
@@ -516,7 +588,33 @@
     }
   }
 
+  function switchView(view) {
+    if (view === activeView) return;
+    activeView = view;
+    loadCompetition(activeComp, true);
+  }
+
   /* ── Render ─────────────────────────────────────────────────── */
+  function isWorldCup(code) {
+    return WC_PRIORITY.includes(code);
+  }
+
+  function renderViewToggle() {
+    return `
+      <div class="view-toggle" id="view-toggle" role="tablist" aria-label="Switch view">
+        <button class="comp-btn" role="tab" data-view="standings"
+          aria-selected="${activeView === 'standings'}">Group Standings</button>
+        <button class="comp-btn" role="tab" data-view="bracket"
+          aria-selected="${activeView === 'bracket'}">Round of 32</button>
+      </div>`;
+  }
+
+  function attachViewToggle() {
+    document.getElementById('view-toggle')?.querySelectorAll('[data-view]').forEach(btn => {
+      btn.addEventListener('click', () => switchView(btn.dataset.view));
+    });
+  }
+
   function renderCompetition(code, rows) {
     if (!rows.length) {
       setContent(`
@@ -537,8 +635,70 @@
         <span>${escHtml(name)} · Snapshot ${dateStr}</span>
       </div>`;
 
+    if (isWorldCup(code)) html += renderViewToggle();
+
     html += isGrouped ? renderGrouped(rows) : `<div class="table-wrap">${renderTable(rows, name)}</div>`;
     setContent(html);
+
+    if (isWorldCup(code)) attachViewToggle();
+  }
+
+  async function loadBracketView(code) {
+    const name = COMP_NAMES[code] || code;
+    try {
+      const matches = await apiFetch(`/api/bracket/${code}`);
+      let html = `
+        <div class="snapshot-meta">
+          <span class="pulse" aria-hidden="true"></span>
+          <span>${escHtml(name)} · Round of 32</span>
+        </div>`;
+      html += renderViewToggle();
+      html += renderBracket(matches);
+      setContent(html);
+      attachViewToggle();
+    } catch {
+      setContent(`
+        <p class="state-msg">
+          <strong>Could not load bracket.</strong>
+          Check that the server is running.
+        </p>`);
+    }
+  }
+
+  function renderBracket(matches) {
+    if (!matches.length) {
+      return '<p class="state-msg">No bracket data available yet.</p>';
+    }
+    const cards = matches.map(m => {
+      const homeWin = m.winner === 'HOME_TEAM';
+      const awayWin = m.winner === 'AWAY_TEAM';
+      const hasScore = m.homeScore !== null && m.homeScore !== undefined;
+      const footer   = matchFooter(m);
+      return `
+        <div class="match-card">
+          <div class="match-row${homeWin ? ' is-winner' : ''}">
+            <span class="match-team">${escHtml(m.homeTeam)}</span>
+            <span class="match-score">${hasScore ? m.homeScore : ''}</span>
+          </div>
+          <div class="match-row${awayWin ? ' is-winner' : ''}">
+            <span class="match-team">${escHtml(m.awayTeam)}</span>
+            <span class="match-score">${hasScore ? m.awayScore : ''}</span>
+          </div>
+          <div class="match-footer${m.status === 'IN_PLAY' || m.status === 'PAUSED' ? ' is-live' : ''}">${footer}</div>
+        </div>`;
+    }).join('');
+    return `<div class="bracket-grid">${cards}</div>`;
+  }
+
+  function matchFooter(m) {
+    if (m.status === 'FINISHED') return 'Final';
+    if (m.status === 'IN_PLAY')  return 'Live';
+    if (m.status === 'PAUSED')   return 'Half-time';
+    if (m.utcDate) {
+      const d = new Date(m.utcDate);
+      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
+    }
+    return 'Upcoming';
   }
 
   function renderGrouped(rows) {
