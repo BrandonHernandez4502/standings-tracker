@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StandingsTransformer {
-    
+
     public List<StandingSnapshot> transform(JsonNode root, String leagueId, LocalDate date) {
 
         String startDate = root.path("season").path("startDate").asText("");

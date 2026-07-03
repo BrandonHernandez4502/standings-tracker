@@ -426,6 +426,123 @@
 
     .match-footer.is-live { color: oklch(0.72 0.18 145); }
 
+    .live-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: oklch(0.72 0.18 145);
+      vertical-align: middle;
+      margin-right: 4px;
+      animation: pulse-live 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-live {
+      0%, 100% { opacity: 1;   transform: scale(1);   }
+      50%       { opacity: 0.3; transform: scale(0.75); }
+    }
+
+    /* ── Bracket Layout ───────────────────────────────────────── */
+    .bracket-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: var(--sp-4);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .bracket {
+      display: flex;
+      width: max-content;
+      min-width: 100%;
+    }
+
+    .b-col { width: 188px; flex-shrink: 0; }
+    .b-col + .b-col { border-left: 1px solid var(--border); }
+
+    .b-col-header {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: var(--sp-2) var(--sp-3);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+      background: var(--surface);
+    }
+
+    .b-col-slots { display: flex; flex-direction: column; }
+
+    .b-slot {
+      display: flex;
+      align-items: center;
+      padding: var(--sp-2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .b-slot:last-child { border-bottom: none; }
+
+    .b-match {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .b-match.is-live {
+      border-color: oklch(0.72 0.18 145 / 0.55);
+      animation: pulse-border 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% { border-color: oklch(0.72 0.18 145 / 0.55); }
+      50%       { border-color: oklch(0.72 0.18 145 / 0.15); }
+    }
+
+    .b-team {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px var(--sp-2);
+      gap: var(--sp-2);
+    }
+
+    .b-team + .b-team  { border-top: 1px solid var(--border); }
+    .b-team.is-winner  { background: var(--primary-dim); }
+    .b-team.is-winner .b-name  { color: var(--primary); font-weight: 600; }
+    .b-team.is-winner .b-score { color: var(--primary); }
+
+    .b-name {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.8125rem;
+      color: var(--ink);
+    }
+
+    .b-score {
+      font-family: var(--font-data);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: oklch(0.76 0.005 110);
+      min-width: 1rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .b-date {
+      font-size: 0.625rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 2px var(--sp-2) 3px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
     /* ── Responsive ───────────────────────────────────────────── */
     @media (max-width: 640px) {
       .header-inner { padding: 0 var(--sp-4); }
@@ -486,6 +603,7 @@
   /* ── State ──────────────────────────────────────────────────── */
   let activeComp = null;
   let activeView = 'standings';
+  let bracketPollTimer = null;
 
   /* ── Elements ───────────────────────────────────────────────── */
   const compNav = document.getElementById('comp-nav');
@@ -560,8 +678,31 @@
     return res.json();
   }
 
+  function stopBracketPolling() {
+    if (bracketPollTimer) { clearInterval(bracketPollTimer); bracketPollTimer = null; }
+  }
+
+  function isRoundsLive(rounds) {
+    return rounds.some(r => r.matches.some(m => m.status === 'IN_PLAY' || m.status === 'PAUSED'));
+  }
+
+  function startBracketPolling(code) {
+    stopBracketPolling();
+    bracketPollTimer = setInterval(async () => {
+      try {
+        const rounds = await apiFetch(`/api/bracket/${code}`);
+        const wrap = document.getElementById('bracket-content');
+        if (!wrap) { stopBracketPolling(); return; }
+        const temp = document.createElement('div');
+        temp.innerHTML = renderBracket(rounds);
+        wrap.replaceWith(temp.firstElementChild);
+        if (!isRoundsLive(rounds)) stopBracketPolling();
+      } catch { /* ignore — try again next tick */ }
+    }, 60_000);
+  }
+
   async function loadCompetition(code, initial = false) {
-    if (code !== activeComp) activeView = 'standings';
+    if (code !== activeComp) { activeView = 'standings'; stopBracketPolling(); }
     activeComp = code;
     setActiveTab(code);
 
@@ -590,6 +731,7 @@
 
   function switchView(view) {
     if (view === activeView) return;
+    if (view !== 'bracket') stopBracketPolling();
     activeView = view;
     loadCompetition(activeComp, true);
   }
@@ -605,7 +747,7 @@
         <button class="comp-btn" role="tab" data-view="standings"
           aria-selected="${activeView === 'standings'}">Group Standings</button>
         <button class="comp-btn" role="tab" data-view="bracket"
-          aria-selected="${activeView === 'bracket'}">Round of 32</button>
+          aria-selected="${activeView === 'bracket'}">Bracket</button>
       </div>`;
   }
 
@@ -646,16 +788,18 @@
   async function loadBracketView(code) {
     const name = COMP_NAMES[code] || code;
     try {
-      const matches = await apiFetch(`/api/bracket/${code}`);
+      const rounds = await apiFetch(`/api/bracket/${code}`);
+      const roundLabel = rounds.length ? rounds[0].label : 'Bracket';
       let html = `
         <div class="snapshot-meta">
           <span class="pulse" aria-hidden="true"></span>
-          <span>${escHtml(name)} · Round of 32</span>
+          <span>${escHtml(name)} · ${escHtml(roundLabel)}</span>
         </div>`;
       html += renderViewToggle();
-      html += renderBracket(matches);
+      html += renderBracket(rounds);
       setContent(html);
       attachViewToggle();
+      if (isRoundsLive(rounds)) startBracketPolling(code);
     } catch {
       setContent(`
         <p class="state-msg">
@@ -665,40 +809,48 @@
     }
   }
 
-  function renderBracket(matches) {
-    if (!matches.length) {
-      return '<p class="state-msg">No bracket data available yet.</p>';
-    }
-    const cards = matches.map(m => {
-      const homeWin = m.winner === 'HOME_TEAM';
-      const awayWin = m.winner === 'AWAY_TEAM';
-      const hasScore = m.homeScore !== null && m.homeScore !== undefined;
-      const footer   = matchFooter(m);
+  function renderBracket(rounds) {
+    if (!rounds.length) return '<div id="bracket-content"><p class="state-msg">No bracket data yet.</p></div>';
+
+    const baseSlots = rounds[0].matches.length;
+    const slotH     = 80; // px per slot in the first (widest) round
+
+    const cols = rounds.map(round => {
+      const mySlotH = (baseSlots / round.matches.length) * slotH;
+      const slots = round.matches.map(m => {
+        const homeWin  = m.winner === 'HOME_TEAM';
+        const awayWin  = m.winner === 'AWAY_TEAM';
+        const hasScore = m.homeScore !== null && m.homeScore !== undefined;
+        const isLive   = m.status === 'IN_PLAY' || m.status === 'PAUSED';
+        const showDate = !hasScore && m.utcDate;
+        const dateStr  = showDate
+          ? new Date(m.utcDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })
+          : '';
+
+        const card = `
+          <div class="b-match${isLive ? ' is-live' : ''}">
+            <div class="b-team${homeWin ? ' is-winner' : ''}">
+              <span class="b-name">${escHtml(m.homeTeam)}</span>
+              <span class="b-score">${hasScore ? m.homeScore : ''}</span>
+            </div>
+            <div class="b-team${awayWin ? ' is-winner' : ''}">
+              <span class="b-name">${escHtml(m.awayTeam)}</span>
+              <span class="b-score">${hasScore ? m.awayScore : ''}</span>
+            </div>
+            ${showDate ? `<div class="b-date">${dateStr}</div>` : ''}
+          </div>`;
+
+        return `<div class="b-slot" style="height:${mySlotH}px">${card}</div>`;
+      }).join('');
+
       return `
-        <div class="match-card">
-          <div class="match-row${homeWin ? ' is-winner' : ''}">
-            <span class="match-team">${escHtml(m.homeTeam)}</span>
-            <span class="match-score">${hasScore ? m.homeScore : ''}</span>
-          </div>
-          <div class="match-row${awayWin ? ' is-winner' : ''}">
-            <span class="match-team">${escHtml(m.awayTeam)}</span>
-            <span class="match-score">${hasScore ? m.awayScore : ''}</span>
-          </div>
-          <div class="match-footer${m.status === 'IN_PLAY' || m.status === 'PAUSED' ? ' is-live' : ''}">${footer}</div>
+        <div class="b-col">
+          <div class="b-col-header">${escHtml(round.label)}</div>
+          <div class="b-col-slots">${slots}</div>
         </div>`;
     }).join('');
-    return `<div class="bracket-grid">${cards}</div>`;
-  }
 
-  function matchFooter(m) {
-    if (m.status === 'FINISHED') return 'Final';
-    if (m.status === 'IN_PLAY')  return 'Live';
-    if (m.status === 'PAUSED')   return 'Half-time';
-    if (m.utcDate) {
-      const d = new Date(m.utcDate);
-      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
-    }
-    return 'Upcoming';
+    return `<div id="bracket-content"><div class="bracket-wrap"><div class="bracket">${cols}</div></div></div>`;
   }
 
   function renderGrouped(rows) {
